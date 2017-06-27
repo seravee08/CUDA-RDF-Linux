@@ -1,0 +1,17 @@
+#number of pixels (hand)
+num_pixels: 1000
+#color
+color: RED
+#number of pixels (arm)
+num_pixels: 600
+#color
+color: GREEN
+
+#number of trees
+num_trees: 3
+
+#min prob
+#min_prob: 0.95
+
+#number of features
+num_features: 100

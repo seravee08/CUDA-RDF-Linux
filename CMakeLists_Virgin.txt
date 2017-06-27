@@ -1,0 +1,16 @@
+project(CMake-Test)
+cmake_minimum_required(VERSION 3.5)
+find_package(CUDA QUIET)
+
+aux_source_directory(. DIR_SRCS)
+
+#set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-gencode arch=compute_20,code=sm_20)
+
+#cuda_add_executable(CMake-Test
+#					simple_kernel.cu
+#					simple_kernel.cuh
+#					main.cpp)
+
+cuda_add_library(cu_kernel simple_kernel.cu simple_kernel.cuh OPTIONS -arch sm_35)
+add_executable(CMake-Test ${DIR_SRCS})
+target_link_libraries(CMake-Test cu_kernel ${CUDA_nppi_LIBRARY})
